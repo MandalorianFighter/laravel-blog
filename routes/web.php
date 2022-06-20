@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return view('about');
+    $tags = ['learning', 'programming', 'php', 'oop'];
+    $creator = ['Name' => 'Yanush', 'Surname' => 'Polishchuk', 'Position' => 'PHP-programmer', 'E-mail' => 'yanush.polishchuk@gmail.com'];
+    return view('about', ['tags' => $tags, 'creator' => $creator]);
 });
