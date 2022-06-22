@@ -22,3 +22,9 @@ Route::get('about', function () {
     $creator = ['Name' => 'Yanush', 'Surname' => 'Polishchuk', 'Position' => 'PHP-programmer', 'E-mail' => 'yanush.polishchuk@gmail.com'];
     return view('about', ['tags' => $tags, 'creator' => $creator]);
 });
+
+Route::get('articles', function () {
+    $articles = App\Models\Article::all();
+    $articles->toArray();
+    return view('articles', ['articles' => $articles]);
+});
