@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('body');
-            $table->integer('views_count')->nullable();
+            $table->integer('views_count')->default(0);
+            $table->integer('likes_count')->default(0);
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }
