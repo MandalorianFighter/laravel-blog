@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+
+    public function scopeIsPublished($query)
+{
+    return $query->where('published', true);
+}
 }
