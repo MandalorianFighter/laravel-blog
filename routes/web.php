@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,11 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function () {
-    $tags = ['learning', 'programming', 'php', 'oop'];
-    $creator = ['Name' => 'Yanush', 'Surname' => 'Polishchuk', 'Position' => 'PHP-programmer', 'E-mail' => 'yanush.polishchuk@gmail.com'];
-    return view('about', ['tags' => $tags, 'creator' => $creator]);
-});
+Route::get('about', [PageController::class, 'about']);
 
 Route::get('articles', function () {
     $articles = App\Models\Article::all();
