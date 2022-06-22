@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
 
+use App\Http\Controllers\RatingController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::get('about', [PageController::class, 'about']);
+
+Route::get('rating', [RatingController::class, 'index']);
 
 Route::get('articles', function () {
     $articles = App\Models\Article::all();
