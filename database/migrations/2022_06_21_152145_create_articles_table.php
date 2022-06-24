@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('body');
+            $table->string('category')->default('undefined');
             $table->integer('views_count')->default(0);
             $table->integer('likes_count')->default(0);
             $table->boolean('published')->default(false);
