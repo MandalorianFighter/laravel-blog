@@ -12,6 +12,6 @@ class RatingController extends Controller
     public function index()
     {
 	$published = Article::isPublished()->orderBy('likes_count', 'desc')->get();
-        return view('rating.index', [ 'published' => $published ]);
+        return view('rating.index', ['published' => $published]);
     }
 }
