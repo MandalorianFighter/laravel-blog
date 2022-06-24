@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
-
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\ArticleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,12 @@ use App\Http\Controllers\RatingController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::get('about', [PageController::class, 'about']);
+Route::get('about', [PageController::class, 'about'])->name('about');
 
-Route::get('rating', [RatingController::class, 'index']);
+Route::get('rating', [RatingController::class, 'index'])->name('rating');
 
-Route::get('articles', function () {
-    $articles = App\Models\Article::all();
-    $articles->toArray();
-    return view('articles', ['articles' => $articles]);
-});
+Route::get('articles', [ArticleController::class, 'index'])->name('articles');
+
+Route::get('articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
