@@ -2,10 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\RatingController;
-use App\Http\Controllers\ArticleController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('about', [PageController::class, 'about'])->name('about');
+Route::get('about', 'App\Http\Controllers\PageController@about')->name('page.about');
 
-Route::get('rating', [RatingController::class, 'index'])->name('rating');
+Route::get('rating', 'App\Http\Controllers\RatingController@index')->name('rating.index');
 
-Route::get('articles', [ArticleController::class, 'index'])->name('articles');
+Route::get('articles', 'App\Http\Controllers\ArticleController@index')->name('articles.index');
 
-Route::get('articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('articles/create', 'App\Http\Controllers\ArticleController@create')->name('articles.create');
+
+Route::post('articles', 'App\Http\Controllers\ArticleController@store')->name('articles.store');
+
+Route::get('articles/{id}', 'App\Http\Controllers\ArticleController@show')->name('articles.show');
