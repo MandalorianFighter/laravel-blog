@@ -14,6 +14,7 @@
 {{Form::close()}}
     @foreach ($articles as $article)
         <h2><a href="/articles/{{$article->id}}">{{$article->name}}</a></h2>
+        <p><a href="/articles/{{$article->id}}/edit">Edit an Article</a></p>
         <div>{{Str::limit($article->body, 200)}}</div>
     @endforeach
 
