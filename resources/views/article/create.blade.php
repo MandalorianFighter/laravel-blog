@@ -15,10 +15,7 @@
 
 @section('content')
 {{ Form::model($article, ['url' => route('articles.store')]) }}
-    {{ Form::label('name', 'Name') }}
-    {{ Form::text('name') }}<br>
-    {{ Form::label('body', 'Content') }}
-    {{ Form::textarea('body') }}<br>
-    {{ Form::submit('Create') }}
+    @include('article.form')
+    {{ Form::submit('Save') }}
 {{ Form::close() }}
 @endsection
