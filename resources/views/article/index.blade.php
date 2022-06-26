@@ -5,7 +5,10 @@
 @section('header', 'Articles list')
 
 @section('content')
-{{Form::open(['url' => route('articles'), 'method' => 'GET'])}}
+<i>{{ $success }}</i>
+<p><a href="{{ route('articles.create') }}">Create an Article</a></p>
+<h2>Find an Article</h2>
+{{Form::open(['url' => route('articles.index'), 'method' => 'GET'])}}
     {{Form::text('q', $q)}}
     {{Form::submit('Find!')}}
 {{Form::close()}}
