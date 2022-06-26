@@ -22,9 +22,9 @@
     </head>
     <body class="antialiased">
     <a href="{{ route('welcome') }}">Home</a>
-    <a href="{{ route('about') }}">About</a>
-    <a href="{{ route('articles') }}">Articles</a>
-    <a href="{{ route('rating') }}">Rating</a>
+    <a href="{{ route('page.about') }}">About</a>
+    <a href="{{ route('articles.index') }}">Articles</a>
+    <a href="{{ route('rating.index') }}">Rating</a>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
